@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlamesZone</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}" >
+    <link rel="icon" href="{% static 'images/flame.jpg' %}">
+</head>
+
+
+<body>
+   <center>
+    <h1>FLAMES Calculator</h1>
+    <div class="form-container">
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name1" placeholder="Enter name 1" required><br><br>
+    <input type="text" name="name2" placeholder="Enter name 2" required><br><br>
+    <button type="submit">Check FLAMES</button>
+</form>
+</center>
+
+{% if result %}
+  <h2>Result: {{ result }}</h2>
+{% endif %}
+</div>
+
+</body>
+</html>
